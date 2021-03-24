@@ -1,0 +1,126 @@
+steki
+int *ptr;
+ptr = ... - podriad idushih yacheek
+a[i]
+ptr+i
+_______________
+spiski
+struct {
+    element
+    adress sleduushego
+}
+posled dostup
+poslednee zveno -> null
+head 
+ukaz -> imua polya
+
+struct list {
+    int elem;
+    struct list *next;
+};
+void pech(struct list*);
+//void pech(struct list* head){
+struct list *current;
+current = head;
+while (current != NULL)
+{printf("%d   ", current -> elem);
+current = current -> next;
+return;}}
+int main() {
+    struct list* head = NULL,  *current, *prev;
+    int i;
+    for (i=0; i<5; i++) {
+        current = (struct list*)malloc(sizeof(srtuct list));
+        current -> elem = i+5;
+        current -> next = NULL;
+        if (head == NULL) head = current;
+        else prev -> next = current;
+        prev = current;
+// scanf("%d", &current -> elem);
+    }
+    pech(head);
+}
+___________________
+ void pech(struct list*);
+ ____________________
+ ochered
+ #include <std.bool>
+ typedef int Item;
+ typedef struct node {
+    Item elem;
+    srtuct node *next } Node;
+ }
+ typedef srtuct queue{
+    Node *front;
+    Node *rear;
+    int items;} Queue;
+ }
+ void initqueue(Queue*pq){
+    pq -> front = NULL;
+    pq -> rear = NULL;
+    pq -> items = 0;
+    return;
+ };
+ bool queueisfull(Queue*pq) {
+    return pq -> items == maxqueue;}
+ bool queueisempty(Queue*pq){
+    return pq -> items == 0;}
+ void addqueue (Item, Queue){
+    Node* pnew;
+    pnew = (Node*)malloc(sizeof(Node));
+    pnew -> elem = a;
+    pnew -> next = NULL;
+    if (queueisempty(pq)) 
+        pq -> front = pnew;
+    else {pq -> rear -> next = pnew};
+    pq -> rear = pnew;
+    pq -> items++;
+    return;
+ }
+ void delqueue(Item *a, Queue *pq){
+     Node* pn;
+     pn = pq->front;
+     *a =  pq -> front -> elem;
+     pq -> front = pq -> front -> next;
+     pq -> items--;
+     free(pn);
+     return;
+ };
+ const int maxqueue=10;
+ int main() {
+    int i;
+    Queue *pq=NULL;
+    pq = (Queue*)malloc(sizeof(Queue));
+    //initialize
+    initqueue(pq);
+    scanf("%d", &a);
+    for (i=0; i<5; i++)
+        addqueue(a, pq);
+    if(queueisempty) print("pusto");
+    delqueue(pitem;pq)
+        printf("%d", a);
+    return 0;
+ }
+ _______
+steck
+
+toge spisok
+struct Node {
+    intd;
+    struct Node *p//next;}
+}
+int main() {
+srtuck Node *top = NUUL;
+pnew = (struct Node*)malloc(sizeof(struc Node));
+pnew -> p = top;
+pnew -> d = i;
+top = pnew; 
+return 0;}
+
+push(a) - dobavlyaem v nachalo 
+pop - vitaskivaet 
+_______________________
+trees
+ O root
+
+ 

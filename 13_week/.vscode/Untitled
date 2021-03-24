@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int Item;
+
+typedef struct list {
+    Item elem;
+    struct list *next;
+} List;
+List * vkonec(List *lst, int number)
+{
+  List *temp, *p;
+  temp = (List *)malloc(sizeof(List));
+  temp -> next = NULL;
+  temp->elem = number; 
+  lst->next = temp; 
+  return(temp);
+}
+List * vnachalo(List *lst, int number)
+{
+  List *temp, *p;
+  temp = (List *)malloc(sizeof(List));
+  temp->elem = number; 
+  temp->next = lst; 
+  return(temp);
+}
+List * addelem(List *lst, int number)
+{
+  List *temp, *p;
+  temp = (List *)malloc(sizeof(List));
+  p = lst->next;
+  lst->next = temp;
+  temp->elem = number; 
+  temp->next = p; 
+  printf("gg");
+  return(temp);
+}
+
+int main() {
+    List *head = NULL, *current, *prev, *ssilka; 
+    int i = 1, n, max =10, znach, k;
+    for (i =0; i<10; i++) {
+        current  = (List*)malloc(sizeof(List));
+        current -> elem = i+1;
+        current -> next = NULL;  
+        if (head == NULL) head = current; 
+        else prev -> next = current;
+        prev = current;};
+    
+
+    while(i!=0){
+        printf("Komandi 1-qq 2-qq 3-qq\n");
+        scanf("%d", &i);
+        switch (i)
+        {
+        case 1:
+            max++;
+            scanf("%d", &n);
+            head = vnachalo(head, n);
+            ssilka = head;
+            do
+                {
+                    printf("%d ", ssilka -> elem);
+                    ssilka = ssilka -> next;
+                } while (ssilka -> next != NULL);
+                printf("%d\n", ssilka -> elem);
+            ssilka = head -> next;
+            break;
+        case 2:
+            scanf("%d", &n);
+            ssilka = head -> next;
+            k = 1;
+            while (ssilka -> next != NULL) {
+                ssilka = ssilka -> next;
+                k++;}
+            vkonec(ssilka, n);
+            max ++;
+            ssilka = head;
+            while (ssilka -> next != NULL)
+                {               ssilka = head -> next;         ssilka = head -> next;
+                    printf("%d ", ssilka -> elem);
+                    ssilka = ssilka -> next;
+                }
+                printf("%d\n", ssilka -> elem);
+            break;
+        case 3:
+            scanf("%d %d", &n, &znach);
+            if (n == 1 || n == max) { 
+                printf("Vvedite druguu komandu\n");
+                break;
+            };
+            ssilka = head -> next;
+            for (i=1; i<=n; i++) 
+                ssilka = ssilka -> next;
+            printf("hh\n");
+            addelem(ssilka, znach);
+            printf("hh");
+            max ++;
+            ssilka = head;
+            while (ssilka -> next != NULL);
+            {
+                printf("%d ", ssilka -> elem);
+                ssilka = ssilka -> next;
+            } printf("%d ", ssilka -> elem);
+            printf("\n");
+            break;
+        default:
+            i=0;
+            break;
+        }
+    }
+    return 0;
+}

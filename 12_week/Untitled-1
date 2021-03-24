@@ -1,0 +1,23 @@
+int a[4][2]={{1,3},{4,8},{5,7}, {2,1}};
+int (*ptr)[2]- ukazatel na 2 chisla
+ptr=a;
+*(ptr + i)- adres i stroki;
+*(ptr +i ) + j -adres j elementa
+*(*(ptr+i)+j) - znachenie i j elementa
+__________________
+vidilenie mesta dlya massiva
+int (*prt)[2];
+ptr = (int(*)[2])malloc(4*2*sizeof(int));
+///
+int **ptr; - ukazatel na ukazatel;
+ptr=(int **)malloc(4*sizeof(int*));
+for (i=0; i<4; i++)
+*(ptr +i)= (int*)malloc(2*sizeof(int));
+______________________________
+osvobogdenie payati 1 free(ptr)
+ 2 - v zikle
+ ______________________________
+ int sum(int (*)[2]);
+         (int **);
+______________________________
+valdrind .\a
